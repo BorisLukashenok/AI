@@ -58,12 +58,12 @@ class Population:
         self.__metod = True if metod == 'max' else False
         self.__population = [self.__new_specimen() for _ in range(self.__size)]
         self.__population.sort(reverse=self.__metod, key=self.__func_from_bin)
-    # Значение цункции y по x(особи)
-
+    
+    # Значение функции y по x(особи)
     def __func_from_bin(self, elem: Specimen):
         return self.__func.subs(self.x, self.__bin_to_int(str(elem)))
-    # Новая популяция и определение победителя сортировкой по y
 
+    # Новая популяция и определение победителя сортировкой по y
     def next_population(self):
         self.__population = self.__generation()
         self.__population.sort(reverse=self.__metod, key=self.__func_from_bin)
