@@ -85,8 +85,7 @@ class Population:
     def __birth(self, parents: list[Specimen]) -> list[Specimen]:
         children = []
         # Попарно создаем потомков
-        ss=len(parents)
-        for i in range(0,ss , 2):
+        for i in range(0, len(parents), 2):
             children.extend(parents[i] + parents[i + 1])
         # Оставляем особей входящих в заданный отрезок иследования
         sps = []
